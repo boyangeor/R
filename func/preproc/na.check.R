@@ -15,4 +15,6 @@ na.check <- function(x) {
   na.cols <- m[, "total"] > 0
   list(nna.cols = sum(na.cols), na.cols = names(x)[na.cols] , m = m,
        na.cor = round(cor(na.m[, na.cols]), 2))
+  
+  # git test
 }
