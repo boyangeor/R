@@ -17,4 +17,5 @@ na.check <- function(x) {
        na.cor = round(cor(na.m[, na.cols]), 2))
   
   # git test
+  # git test2
 }
