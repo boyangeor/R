@@ -1,7 +1,6 @@
 na.check <- function(x) {
   # Expects data.frame, returns information about the distribution
   # of missing values
-  # fo is a formula (not all cols might be worth checking for NAs)
   if (!is.data.frame(x))
     stop("The argument's class is not 'data.frame'")
   
@@ -15,7 +14,4 @@ na.check <- function(x) {
   na.cols <- m[, "total"] > 0
   list(nna.cols = sum(na.cols), na.cols = names(x)[na.cols] , m = m,
        na.cor = round(cor(na.m[, na.cols]), 2))
-  
-  # git test
-  # git test2
 }

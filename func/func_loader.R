@@ -1,5 +1,5 @@
-func_loader <- function() {
-  for(d in list.dirs("/home/boyangeorgiev/boR/func"))
+func_loader <- function(path) {
+  for(d in list.dirs(path))
     for (f in list.files(d, full.names = T))
       # If the file has .R extension AND is not 'func_loader.R',
       # otherwise recursion happens and R blocks
@@ -7,4 +7,4 @@ func_loader <- function() {
           basename(f) != "func_loader.R")
         source(f)
 }
-func_loader()
+func_loader(path = "/home/boyangeorgiev/boR/func")
