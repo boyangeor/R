@@ -21,7 +21,10 @@ att.check <- function(x) {
   
   rn <- paste0(seq_len(sum(nom.att)), ". ", names(x)[nom.att])
   cn <- c("nunique", "minclass", "maxclass","entropy", "max.entropy")
-  nominal.m <- matrix(NA, sum(nom.att), 5, dimnames=list(rn, cn))
+  if (any(nom.att))
+    nominal.m <- matrix(NA, sum(nom.att), 5, dimnames=list(rn, cn))
+  else
+    nominal.m <- NA
   
   for (i in seq_len(sum(nom.att))) {
     nominal.m[i, ] <- sapply(x[nom.att], FUN=function(y) {
